@@ -1,0 +1,2454 @@
+/*==================================================
+            FOREVER GAVESHA
+        Luxury Birthday Website
+        Theme : Black & Gold
+        Author : Kavinda Karunarathna
+==================================================*/
+
+
+/*==============================
+        GOOGLE FONTS
+==============================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/*==============================
+        ROOT VARIABLES
+==============================*/
+
+:root{
+
+    --gold:#D4AF37;
+    --gold-light:#FFD86B;
+    --black:#050505;
+    --dark:#111111;
+    --glass:rgba(255,255,255,.05);
+    --white:#ffffff;
+    --text:#d8d8d8;
+
+    --transition:.45s;
+
+}
+
+
+/*==============================
+        RESET
+==============================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:#050505;
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/*==============================
+        SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#090909;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(var(--gold),#fff1aa);
+
+    border-radius:100px;
+
+}
+
+
+/*==============================
+        GLOBAL
+==============================*/
+
+section{
+
+    padding:120px 8%;
+
+    position:relative;
+
+}
+
+.container{
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+h1,h2,h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+}
+
+
+/*==============================
+        LOADER
+==============================*/
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+.loader-content{
+
+    text-align:center;
+
+}
+
+.loader-circle{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    border-top:2px solid var(--gold);
+
+    margin:auto;
+
+    animation:spin 2s linear infinite;
+
+}
+
+.loader-logo{
+
+    margin-top:35px;
+
+    font-size:4rem;
+
+    letter-spacing:8px;
+
+    color:white;
+
+}
+
+.loader-logo span{
+
+    color:var(--gold);
+
+}
+
+.loader-text{
+
+    margin-top:20px;
+
+    color:#999;
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+}
+
+
+/*==============================
+        HERO
+==============================*/
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(212,175,55,.25),
+    transparent 65%);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:850px;
+
+}
+
+.hero h3{
+
+    color:var(--gold);
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    line-height:1.1;
+
+}
+
+.hero h2{
+
+    margin-top:20px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    color:var(--gold-light);
+
+}
+
+.hero p{
+
+    margin-top:30px;
+
+    color:#d6d6d6;
+
+    line-height:2;
+
+    font-size:1.1rem;
+
+}
+
+.hero button{
+
+    margin-top:50px;
+
+    padding:18px 45px;
+
+    border-radius:100px;
+
+    background:linear-gradient(45deg,#b98b12,var(--gold));
+
+    color:black;
+
+    font-weight:700;
+
+    transition:.4s;
+
+}
+
+.hero button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 40px rgba(212,175,55,.5);
+
+}
+
+/*==============================
+      GLASSMORPHISM
+==============================*/
+
+.glass{
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45),
+    inset 0 0 1px rgba(255,255,255,.25);
+
+}
+
+
+/*==============================
+        FLOATING HEARTS
+==============================*/
+
+.hearts-container{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    color:rgba(255,215,120,.25);
+
+    animation:floatHeart linear forwards;
+
+}
+
+
+/*==============================
+        GOLD PARTICLES
+==============================*/
+
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+
+    height:4px;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    box-shadow:0 0 15px var(--gold);
+
+    animation:particleFloat linear infinite;
+
+}
+
+
+/*==============================
+        COUNTDOWN
+==============================*/
+
+.countdown{
+
+    text-align:center;
+
+}
+
+.countdown h2{
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+}
+
+.countdown-box{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+}
+
+.time{
+
+    width:180px;
+
+    padding:40px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+.time:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 50px rgba(212,175,55,.18);
+
+}
+
+.time span{
+
+    display:block;
+
+    font-size:4rem;
+
+    color:var(--gold);
+
+    font-weight:bold;
+
+}
+
+.time small{
+
+    display:block;
+
+    margin-top:15px;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#bbb;
+
+}
+
+
+/*==============================
+        LOVE STORY
+==============================*/
+
+.timeline{
+
+    position:relative;
+
+}
+
+.timeline h2{
+
+    text-align:center;
+
+    margin-bottom:80px;
+
+    font-size:3rem;
+
+}
+
+.timeline-item{
+
+    width:80%;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.04);
+
+    border-left:4px solid var(--gold);
+
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+.timeline-item:hover{
+
+    transform:translateX(15px);
+
+    background:rgba(255,255,255,.06);
+
+}
+
+.timeline-item h3{
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+
+}
+
+.timeline-item p{
+
+    line-height:2;
+
+    color:#d7d7d7;
+
+}
+
+
+/*==============================
+        LOVE LETTER
+==============================*/
+
+.love-letter{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.letter{
+
+    max-width:900px;
+
+    padding:70px;
+
+    background:#0d0d0d;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.5);
+
+}
+
+.letter h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+    color:var(--gold);
+
+    font-size:3rem;
+
+}
+
+.letter p{
+
+    margin-bottom:25px;
+
+    line-height:2.2;
+
+    color:#ddd;
+
+    font-size:1.05rem;
+
+}
+
+.letter h3{
+
+    margin-top:40px;
+
+    color:var(--gold-light);
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+}
+
+.letter h4{
+
+    margin-top:15px;
+
+    color:#999;
+
+}
+
+
+/*==============================
+      REASONS I LOVE YOU
+==============================*/
+
+.reasons{
+
+    text-align:center;
+
+}
+
+.reason-grid{
+
+    margin-top:70px;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+}
+
+.reason-card{
+
+    padding:45px 25px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.04);
+
+    transition:.4s;
+
+}
+
+.reason-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(212,175,55,.2);
+
+}
+
+.reason-card i{
+
+    font-size:3rem;
+
+    color:var(--gold);
+
+    margin-bottom:20px;
+
+}
+
+.reason-card h3{
+
+    font-size:2rem;
+
+}
+
+/*==============================
+        GALLERY
+==============================*/
+
+.gallery{
+
+    text-align:center;
+
+}
+
+.gallery h2{
+
+    font-size:3rem;
+
+    margin-bottom:60px;
+
+}
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+}
+
+.gallery-grid img{
+
+    width:100%;
+
+    height:340px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.5s;
+
+    border:2px solid rgba(255,255,255,.08);
+
+}
+
+.gallery-grid img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 25px 60px rgba(212,175,55,.30);
+
+}
+
+
+/*==============================
+        LIGHTBOX
+==============================*/
+
+#lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.95);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+#lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+
+    border-radius:20px;
+
+    box-shadow:0 0 60px rgba(212,175,55,.4);
+
+}
+
+#closeLightbox{
+
+    position:absolute;
+
+    top:40px;
+
+    right:50px;
+
+    font-size:3rem;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+/*==============================
+      BIRTHDAY CAKE
+==============================*/
+
+.birthday-cake{
+
+    text-align:center;
+
+}
+
+.birthday-cake h2{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+#cakeBox{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.cake{
+
+    width:220px;
+
+    height:170px;
+
+    background:linear-gradient(#ffdf9d,#f5c66f);
+
+    border-radius:20px 20px 8px 8px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.cake:hover{
+
+    transform:scale(1.05);
+
+}
+
+.cake::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:35px;
+
+    width:100%;
+
+    height:18px;
+
+    background:#fff;
+
+}
+
+.candle{
+
+    width:12px;
+
+    height:60px;
+
+    background:#ffffff;
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:-55px;
+
+}
+
+.flame{
+
+    width:18px;
+
+    height:18px;
+
+    background:gold;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:-72px;
+
+    animation:flicker .8s infinite;
+
+}
+
+
+/*==============================
+      PROPOSAL
+==============================*/
+
+.proposal-section{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.proposal-card{
+
+    width:100%;
+
+    max-width:900px;
+
+    padding:70px;
+
+    text-align:center;
+
+}
+
+.proposal-card h3{
+
+    color:#999;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+}
+
+.proposal-card h2{
+
+    margin-top:20px;
+
+    font-size:3rem;
+
+    color:var(--gold);
+
+}
+
+.proposal-card p{
+
+    margin-top:25px;
+
+    line-height:2;
+
+    color:#ddd;
+
+}
+
+.proposal-card h1{
+
+    margin-top:60px;
+
+    font-size:4rem;
+
+    color:white;
+
+}
+
+
+/*==============================
+      BUTTONS
+==============================*/
+
+.proposal-buttons{
+
+    margin-top:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:25px;
+
+}
+
+.proposal-buttons button{
+
+    padding:18px 45px;
+
+    border-radius:100px;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    transition:.4s;
+
+}
+
+#yesBtn{
+
+    background:linear-gradient(45deg,#D4AF37,#FFD86B);
+
+    color:black;
+
+}
+
+#foreverBtn{
+
+    background:transparent;
+
+    color:white;
+
+    border:2px solid var(--gold);
+
+}
+
+#yesBtn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 40px rgba(212,175,55,.45);
+
+}
+
+#foreverBtn:hover{
+
+    background:var(--gold);
+
+    color:black;
+
+}
+
+
+/*==============================
+      ENDING
+==============================*/
+
+.ending{
+
+    text-align:center;
+
+}
+
+.ending h1{
+
+    font-size:4rem;
+
+    color:var(--gold);
+
+}
+
+.ending h2{
+
+    margin-top:25px;
+
+    font-size:2.5rem;
+
+}
+
+.ending p{
+
+    margin-top:20px;
+
+    color:#d0d0d0;
+
+    line-height:2;
+
+}
+
+.ending h3{
+
+    margin-top:60px;
+
+    color:#888;
+
+    letter-spacing:4px;
+
+}
+
+
+/*==============================
+      FIREWORKS
+==============================*/
+
+#fireworksCanvas{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+
+/*==============================
+      ANIMATIONS
+==============================*/
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+@keyframes flicker{
+
+    0%{
+
+        transform:translateX(-50%) scale(1);
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:translateX(-50%) scale(.8);
+
+        opacity:.6;
+
+    }
+
+    100%{
+
+        transform:translateX(-50%) scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes floatHeart{
+
+    from{
+
+        transform:translateY(100vh) scale(.4);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:translateY(100vh);
+
+        opacity:0;
+
+    }
+
+    30%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*==============================
+      RESPONSIVE
+==============================*/
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:3.5rem;
+
+}
+
+.hero h2{
+
+font-size:2.4rem;
+
+}
+
+.proposal-card h1{
+
+font-size:2.8rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:80px 6%;
+
+}
+
+.hero h1{
+
+font-size:2.6rem;
+
+}
+
+.hero h2{
+
+font-size:2rem;
+
+}
+
+.hero p{
+
+font-size:1rem;
+
+}
+
+.timeline-item{
+
+width:100%;
+
+}
+
+.time{
+
+width:140px;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.proposal-card{
+
+padding:40px 25px;
+
+}
+
+.proposal-card h1{
+
+font-size:2rem;
+
+}
+
+.ending h1{
+
+font-size:2.5rem;
+
+}
+
+}
+
+/*=========================================
+        APPLE LUXURY ENHANCEMENT
+=========================================*/
+
+body{
+
+background:
+radial-gradient(circle at top,#1a1200 0%,#090909 35%,#050505 100%);
+
+animation:backgroundMove 20s linear infinite;
+
+}
+
+
+/*==============================
+        TEXT SELECTION
+==============================*/
+
+::selection{
+
+background:#D4AF37;
+
+color:black;
+
+}
+
+
+/*==============================
+        GLOW TEXT
+==============================*/
+
+.hero h1{
+
+text-shadow:
+
+0 0 10px rgba(212,175,55,.25),
+
+0 0 25px rgba(212,175,55,.15),
+
+0 0 45px rgba(212,175,55,.08);
+
+}
+
+.hero h2{
+
+text-shadow:
+
+0 0 18px rgba(255,216,107,.4);
+
+}
+
+
+/*==============================
+        GLASS
+==============================*/
+
+.glass{
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(35px);
+
+-webkit-backdrop-filter:blur(35px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 15px 45px rgba(0,0,0,.55),
+
+0 0 40px rgba(212,175,55,.08),
+
+inset 0 0 1px rgba(255,255,255,.4);
+
+}
+
+
+/*==============================
+      HERO BUTTON
+==============================*/
+
+.hero button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero button::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.55),
+
+transparent);
+
+transition:.8s;
+
+}
+
+.hero button:hover::before{
+
+left:120%;
+
+}
+
+
+/*==============================
+      IMAGE HOVER
+==============================*/
+
+.gallery img{
+
+filter:brightness(.88);
+
+}
+
+.gallery img:hover{
+
+filter:brightness(1.15);
+
+transform:
+
+scale(1.08)
+
+rotate(.5deg);
+
+}
+
+
+/*==============================
+        CARD EFFECT
+==============================*/
+
+.reason-card{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.reason-card::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+
+height:250px;
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(212,175,55,.18),
+
+transparent);
+
+left:-120px;
+
+top:-120px;
+
+transition:.6s;
+
+}
+
+.reason-card:hover::before{
+
+left:-40px;
+
+top:-40px;
+
+}
+
+
+/*==============================
+        GOLD LINE
+==============================*/
+
+h2::after{
+
+content:"";
+
+display:block;
+
+width:120px;
+
+height:2px;
+
+margin:20px auto;
+
+background:
+
+linear-gradient(
+
+to right,
+
+transparent,
+
+#D4AF37,
+
+transparent);
+
+}
+
+
+/*==============================
+      PARALLAX
+==============================*/
+
+.hero{
+
+background-attachment:fixed;
+
+}
+
+
+/*==============================
+      SCROLL EFFECT
+==============================*/
+
+.hidden{
+
+opacity:0;
+
+transform:translateY(80px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+/*==============================
+      MUSIC BUTTON
+==============================*/
+
+#musicBtn{
+
+transition:.4s;
+
+}
+
+#musicBtn:hover{
+
+transform:scale(1.15);
+
+box-shadow:
+
+0 0 45px rgba(212,175,55,.5);
+
+}
+
+
+/*==============================
+      LIGHTBOX
+==============================*/
+
+#lightbox img{
+
+transition:.4s;
+
+}
+
+.zoom{
+
+transform:scale(1.45);
+
+cursor:zoom-out;
+
+}
+
+
+/*==============================
+        BACKGROUND
+==============================*/
+
+@keyframes backgroundMove{
+
+0%{
+
+background-position:0 0;
+
+}
+
+100%{
+
+background-position:1000px 0;
+
+}
+
+}
+
+/*=========================================
+        APPLE LUXURY PACK - PART 2
+=========================================*/
+
+
+/*==============================
+        CURSOR GLOW
+==============================*/
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(212,175,55,.05),
+transparent 70%);
+
+pointer-events:none;
+
+left:var(--mouse-x,50%);
+
+top:var(--mouse-y,50%);
+
+transform:translate(-50%,-50%);
+
+z-index:0;
+
+transition:.12s linear;
+
+}
+
+
+/*==============================
+      GOLD BORDER ANIMATION
+==============================*/
+
+.reason-card,
+.timeline-item,
+.time,
+.letter,
+.proposal-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.reason-card::after,
+.timeline-item::after,
+.time::after,
+.letter::after,
+.proposal-card::after{
+
+content:"";
+
+position:absolute;
+
+top:-2px;
+
+left:-100%;
+
+width:100%;
+
+height:2px;
+
+background:linear-gradient(
+90deg,
+transparent,
+#FFD86B,
+transparent);
+
+animation:borderRun 6s linear infinite;
+
+}
+
+
+/*==============================
+        AURORA
+==============================*/
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+radial-gradient(circle at 20% 20%,
+rgba(255,215,120,.08),
+transparent),
+
+radial-gradient(circle at 80% 30%,
+rgba(212,175,55,.08),
+transparent),
+
+radial-gradient(circle at bottom,
+rgba(255,255,255,.03),
+transparent);
+
+mix-blend-mode:screen;
+
+animation:auroraMove 20s linear infinite;
+
+}
+
+
+/*==============================
+        SECTION GLOW
+==============================*/
+
+section::before{
+
+content:"";
+
+position:absolute;
+
+left:50%;
+
+top:0;
+
+transform:translateX(-50%);
+
+width:300px;
+
+height:2px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+#D4AF37,
+transparent);
+
+opacity:.45;
+
+}
+
+
+/*==============================
+        FLOATING LIGHTS
+==============================*/
+
+.light{
+
+position:absolute;
+
+width:6px;
+
+height:6px;
+
+border-radius:50%;
+
+background:#FFD86B;
+
+box-shadow:
+
+0 0 25px #FFD86B;
+
+animation:lightFloat linear infinite;
+
+}
+
+
+/*==============================
+        HERO IMAGE GLOW
+==============================*/
+
+.hero-content{
+
+animation:heroFloat 5s ease-in-out infinite;
+
+}
+
+
+/*==============================
+        BUTTON HOVER
+==============================*/
+
+button{
+
+transition:
+
+transform .4s,
+
+box-shadow .4s,
+
+letter-spacing .4s;
+
+}
+
+button:hover{
+
+letter-spacing:2px;
+
+}
+
+
+/*==============================
+      TIMELINE CARD
+==============================*/
+
+.timeline-item{
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+.timeline-item:hover{
+
+transform:
+
+translateX(15px)
+
+scale(1.02);
+
+}
+
+
+/*==============================
+      GALLERY SHADOW
+==============================*/
+
+.gallery img{
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.45);
+
+}
+
+.gallery img:hover{
+
+box-shadow:
+
+0 25px 80px rgba(212,175,55,.35);
+
+}
+
+
+/*==============================
+      LOVE LETTER
+==============================*/
+
+.letter{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.06),
+
+rgba(255,255,255,.03));
+
+}
+
+
+/*==============================
+        MUSIC BUTTON
+==============================*/
+
+#musicBtn{
+
+animation:musicPulse 2.5s infinite;
+
+}
+
+
+/*==============================
+        FIREWORK CANVAS
+==============================*/
+
+#fireworksCanvas{
+
+mix-blend-mode:screen;
+
+}
+
+
+/*==============================
+        ANIMATIONS
+==============================*/
+
+@keyframes borderRun{
+
+0%{
+
+left:-100%;
+
+}
+
+100%{
+
+left:100%;
+
+}
+
+}
+
+@keyframes auroraMove{
+
+0%{
+
+transform:translateX(-5%) scale(1);
+
+}
+
+50%{
+
+transform:translateX(5%) scale(1.08);
+
+}
+
+100%{
+
+transform:translateX(-5%) scale(1);
+
+}
+
+}
+
+@keyframes heroFloat{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes musicPulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+@keyframes lightFloat{
+
+0%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+/*=========================================
+        CINEMATIC PACK - PART 3
+=========================================*/
+
+
+/*==============================
+        SCROLL PROGRESS BAR
+==============================*/
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:var(--scroll-width,0%);
+
+height:4px;
+
+background:linear-gradient(
+90deg,
+#FFD86B,
+#D4AF37,
+#FFF6B5);
+
+box-shadow:0 0 20px #D4AF37;
+
+z-index:999999;
+
+}
+
+
+/*==============================
+        CINEMATIC OVERLAY
+==============================*/
+
+.hero-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.15),
+
+rgba(0,0,0,.65));
+
+z-index:1;
+
+}
+
+
+/*==============================
+        STARS
+==============================*/
+
+.star{
+
+position:absolute;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 15px white;
+
+animation:starBlink 3s infinite;
+
+}
+
+
+/*==============================
+      HERO TITLE ANIMATION
+==============================*/
+
+.hero h1{
+
+animation:
+
+heroReveal 2s ease,
+
+goldGlow 3s infinite;
+
+}
+
+
+/*==============================
+      SUB TITLE
+==============================*/
+
+.hero h2{
+
+animation:
+
+fadeUp 2.5s ease;
+
+}
+
+
+/*==============================
+      PARAGRAPH
+==============================*/
+
+.hero p{
+
+animation:
+
+fadeUp 3s ease;
+
+}
+
+
+/*==============================
+      BUTTON
+==============================*/
+
+.hero button{
+
+animation:
+
+fadeUp 3.5s ease;
+
+}
+
+
+/*==============================
+      TIMELINE
+==============================*/
+
+.timeline-item{
+
+transition:
+
+all .7s;
+
+}
+
+.timeline-item:hover{
+
+box-shadow:
+
+0 0 50px rgba(212,175,55,.18);
+
+}
+
+
+/*==============================
+      GALLERY ZOOM
+==============================*/
+
+.gallery img{
+
+transition:
+
+transform .7s,
+
+filter .7s,
+
+box-shadow .7s;
+
+}
+
+
+/*==============================
+      PROPOSAL CARD
+==============================*/
+
+.proposal-card{
+
+animation:
+
+proposalGlow 5s infinite;
+
+}
+
+
+/*==============================
+      ENDING
+==============================*/
+
+.ending{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.ending::before{
+
+content:"❤️";
+
+position:absolute;
+
+font-size:300px;
+
+opacity:.03;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+}
+
+
+/*==============================
+      LOVE LETTER
+==============================*/
+
+.letter{
+
+transform-style:preserve-3d;
+
+transition:1s;
+
+}
+
+.letter:hover{
+
+transform:
+
+rotateX(4deg)
+
+rotateY(-3deg);
+
+}
+
+
+/*==============================
+      BUTTON RIPPLE
+==============================*/
+
+button{
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+button::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+left:50%;
+
+top:50%;
+
+background:
+
+rgba(255,255,255,.3);
+
+border-radius:50%;
+
+transform:
+
+translate(-50%,-50%);
+
+transition:.6s;
+
+}
+
+button:hover::after{
+
+width:350px;
+
+height:350px;
+
+opacity:0;
+
+}
+
+
+/*==============================
+      ANIMATIONS
+==============================*/
+
+@keyframes heroReveal{
+
+0%{
+
+opacity:0;
+
+transform:
+
+translateY(100px)
+
+scale(.92);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+
+scale(1);
+
+}
+
+}
+
+@keyframes goldGlow{
+
+0%{
+
+text-shadow:
+
+0 0 20px rgba(212,175,55,.15);
+
+}
+
+50%{
+
+text-shadow:
+
+0 0 45px rgba(212,175,55,.45);
+
+}
+
+100%{
+
+text-shadow:
+
+0 0 20px rgba(212,175,55,.15);
+
+}
+
+}
+
+@keyframes proposalGlow{
+
+0%{
+
+box-shadow:
+
+0 0 20px rgba(212,175,55,.15);
+
+}
+
+50%{
+
+box-shadow:
+
+0 0 80px rgba(212,175,55,.45);
+
+}
+
+100%{
+
+box-shadow:
+
+0 0 20px rgba(212,175,55,.15);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes starBlink{
+
+0%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.2;
+
+}
+
+}
